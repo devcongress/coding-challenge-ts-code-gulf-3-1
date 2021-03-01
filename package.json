@@ -1,5 +1,5 @@
 {
-  "name": "devcongress/coding-challenge",
+  "name": "@devcongress/coding-challenge",
   "description": "Code Gulf coding exercise in Typescript.",
   "private": true,
   "devDependencies": {
