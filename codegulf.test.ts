@@ -17,12 +17,28 @@ describe('Move table headings to the left', () => {
     expect(CodeGulf.convert(table)).toEqual(expected)
   })
 
-  xit('Throws error when the columns don\'t have the correct amount of data', () => {
+  xit('convert table with differing amount of columns', () => {
+    const expected = [
+      ["a", 1, "-", "@"],
+      ["b", 2, "-", "$"],
+      ["c", 3, "-"],
+      ["d"]
+    ]
     const table = [
       ["a", "b", "c", "d"],
-      ["1", "3"],
+      ["1", "2", "3"],
       ["-", "-", "-"],
-      ["@"]
+      ["@", "$"]
+    ]
+    expect(CodeGulf.convert(table)).toEqual(expected)
+  })
+
+  xit('Throws error when any column that is not the last don\'t have the correct amount of data', () => {
+    const table = [
+      ["a", "b", "c", "d"],
+      ["1", "2", "3"],
+      ["-", "-", "-", "-"],
+      ["@", "#", "$", "%"]
     ]
     expect(() => CodeGulf.convert(table)).toThrowError(
       'The columns dont have the same amount of data'
