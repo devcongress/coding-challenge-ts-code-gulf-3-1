@@ -1,7 +1,7 @@
 import CodeGulf from './code-golf'
 
-describe('convert table with same amount of columns', () => {
-  it('empty string', () => {
+describe('Move table headings to the left', () => {
+  it('convert table with same amount of columns', () => {
     const expected = [
       ["a", 1, "-", "@"],
       ["b", 2, "-", "#"],
